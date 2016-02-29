@@ -39,7 +39,7 @@ function urlExistsinDB($url){
 	}
 	else{
 		$row = mysql_fetch_row($result);
-		return 'http://foo.bl.ee/'.$row[2];
+		return 'http://foo.bl.ee/shortener/'.$row[2];
 	}
 }
 
@@ -78,7 +78,7 @@ function createShortCode($url){
 	$finalQuery = "UPDATE main SET short_code='$short_url' WHERE id='$id'";
 	mysql_query($finalQuery);
 
-	$finalurl = "http://foo.bl.ee/$short_url";
+	$finalurl = "http://foo.bl.ee/shortener/$short_url";
 
 	return $finalurl;
 
